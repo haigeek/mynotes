@@ -60,8 +60,17 @@ Spring Boot默认提供静态资源目录位置需置于classpath下，目录名
 - /META-INF/resources
 ### 动态的web界面
 Springboot提供模版引擎
+- Thymeleaf
+- FreeMarker
+- Velocity(Springboot 1.5.X不再支持Velocity)
+- Groovy
+- Mustache
 当你使用上述模板引擎中的任何一个，它们默认的模板配置路径为：src/main/resources/templates。当然也可以修改这个路径，具体如何修改，可在后续各模板引擎的配置属性中查询并修改。
-### 渲染Thymeleaf
+## 全局异常的捕获
+Spring Boot提供了一个默认的映射：/error，当请求发生错误的时候，会映射到默认的界面。
+### 统一异常处理
+#### 创建全局异常类
+#### 实现error.html展示
 
 
 
