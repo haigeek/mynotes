@@ -70,7 +70,13 @@ Springboot提供模版引擎
 Spring Boot提供了一个默认的映射：/error，当请求发生错误的时候，会映射到默认的界面。
 ### 统一异常处理
 #### 创建全局异常类
+通过使用@ControllerAdvice定义统一的异常处理类，而不是在每个Controller中逐个定义。@ExceptionHandler用来定义函数针对的异常类型，最后将Exception对象和请求URL映射到error.html中
 #### 实现error.html展示
+实现error.html页面展示：在templates目录下创建error.html，将请求的URL和Exception对象的message输出。注意这里要清楚系统输出的异常数据有那些数据，才能在error.html中建立对于的模版值进行获取。
+#### 以json的形式进行展示
+本质上，只需在@ExceptionHandler之后加入@ResponseBody，就能让处理函数return的内容转换为JSON格式。
+## 数据访问
+### 使用JdbcTemplate操作数据库
 
 
 
