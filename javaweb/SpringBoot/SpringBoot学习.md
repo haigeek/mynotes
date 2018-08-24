@@ -77,6 +77,33 @@ Spring Boot提供了一个默认的映射：/error，当请求发生错误的时
 本质上，只需在@ExceptionHandler之后加入@ResponseBody，就能让处理函数return的内容转换为JSON格式。
 ## 数据访问
 ### 使用JdbcTemplate操作数据库
+Spring的JdbcTemplate是自动配置的，你可以直接使用@Autowired来注入到bean中来使用。例如：
+```java
+@Autowired
+    private JdbcTemplate jdbcTemplate;
+    @Override
+    public void create(String name, Integer age) {
+        jdbcTemplate.update("insert into USER (name ,age) values (?,?)",name,age);
+    }
+
+    @Override
+    public void deleteByName(String name) {
+        jdbcTemplate.update("delete from user where name =?",name);
+
+    }
+
+    @Override
+    public Integer getAllUser() {
+        return  jdbcTemplate.queryForObject("select count(1) from user",Integer.class);
+    }
+
+    @Override
+    public void deleteAllUser() {
+        jdbcTemplate.update("delete from USER");
+    }
+```
+### 使用Spring-data-jpa
+为了解决抽象各个Java实体基本的“增删改查”操作，我们通常会以泛型的方式封装一个模板Dao来进行抽象简化。由于模板Dao的实现，使得这些具体实体的Dao层已经变的非常“薄”，有一些具体实体的Dao实现可能完全就是对模板Dao的简单代理，并且往往这样的实现类可能会出现在很多实体上。Spring-data-jpa的出现正可以让这样一个已经很“薄”的数据访问层变成只是一层接口的编写方式。
 
 
 
