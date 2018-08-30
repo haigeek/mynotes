@@ -16,6 +16,14 @@
 ## 磁盘存储相关
 ## 性能监控和优化命令
 ## 其他命令
+查看系统的版本
+```shell
+cat /etc/redhat-release
+```
+查看内核版本
+```shell
+cat /proc/version
+```
 ## chown命令
 chown改变某个文件或者目录的所有着和所有组‘
 常见参数：
