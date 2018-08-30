@@ -47,8 +47,42 @@ db.collection.update(
 ```
 还可以使用save()方法通过传过来的文档替换已有的文档
 ### 删除文档
+使用remove方式删除文档，在进行删除之前，最好先进行以下find操作
+```shell
+> db.col.insert({title:'learn mongo',name:'haigeek'})
+WriteResult({ "nInserted" : 1 })
+> db.col.insert({title:'learn mongo',name:'haigeek'})
+WriteResult({ "nInserted" : 1 })
+> db.col.find()
+{ "_id" : ObjectId("5b86103d89566d2f2644945e"), "title" : "learn mongo", "name" : "haigeek" }
+{ "_id" : ObjectId("5b86104089566d2f2644945f"), "title" : "learn mongo", "name" : "haigeek" }
+> db.col.remove({'title':"learn mongo"})
+WriteResult({ "nRemoved" : 2 })
+```
 ### 查询文档
+#### 语法
 - `db.COLLECTION_NAME.find()` 查看已经插入的文档
+- `db.COLLECTION_NAME.findOne()` 查看已经插入的文档,只返回一个结果
+- `db.COLLECTION_NAME.find().pretty()` 以格式化的方式来进行文档的阅读
+#### and操作
+mongo中可以传入多个key，以逗号隔开，效果和常规sql的and操作一致
+```shell
+db.col.find({key1:value1, key2:value2}).pretty()
+```
+#### where操作
+12|set
+-|-
+|sc|sdc 
+#### or操作
+```shell
+>db.col.find(
+   {
+      $or: [
+         {key1: value1}, {key2:value2}
+      ]
+   }
+).pretty()
+```
 ## 数据的获取与处理
 ### 条件操作符
 ### $type 操作符
