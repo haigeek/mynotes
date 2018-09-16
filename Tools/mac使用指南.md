@@ -13,6 +13,7 @@ mac默认的终端为bash，和Linux的终端是一致的，我们可以使用�
 `chsh -s /bin/zsh`来进行终端的切换，zsh表示我要进行切换的终端
 ### finder
 - finder快捷键 command+N
+- 复制文件路径 cmd+opt+c
 ### 截图
 系统自带的截图
 - command+shift+3 截整个屏幕
