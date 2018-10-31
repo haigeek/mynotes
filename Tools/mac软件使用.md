@@ -2,6 +2,7 @@
 ### 启动，进入bin文件夹
 ./zkServer.sh start
 ./zkServer.sh start-foreground(在前台显示输出)
+
 ### 停止
 ./zkServer.sh stop
 ## jenv的使用
@@ -36,3 +37,11 @@ jenv which java
 ```language
 jenv global 版本号
 ```
+## youtube-dl的使用
+### 安装
+brew install youtube-dl
+### 使用
+- 查看分辨率
+youtube-dl --proxy 'socks5://127.0.0.1:1086' --list-formats 'https://youtu.be/rkM-dTr89kQ'
+- 指定编号进行下载
+youtube-dl --proxy 'socks5://127.0.0.1:1086' -f 136 'https://youtu.be/rkM-dTr89kQ'
