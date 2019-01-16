@@ -25,8 +25,8 @@
   - 重载（Overload）：发生在同一个类中，方法名必须相同，参数类型不同，个数不同，顺序不同，方法返回值和访问修饰符可以不同，发生在编译时。
   - 重写（Override）：发生在父子类，方法名，参数列表必须相同，返回值小于等于父类，抛出的异常小于等于父类，访问修饰大于等于父类；如果父类方法访问修饰符为private则子类中就不是重写
 
-4. 构造器Constructor是否可以被override
-  构造器不能被重写，不能用static修饰构造器，只能用public private protected 这三个权限修饰符。且不能有返回语句
+4. 构造器Constructor是否可 以被override
+    构造器不能被重写，不能用static修饰构造器，只能用public private protected 这三个权限修饰符。且不能有返回语句
 
 5. 访问控制符public、protected、private、以及默认的区别
 
@@ -36,10 +36,18 @@
   - 默认不写在同包内可以访问
   - 排序：public>protected>default>private
 
-6. 是否可以继承string类
-  String类是final类故不能继承，一切由final修饰过的都不能继承
+6. serialVersionUID 的作用
 
-7. String和StringBuffer、StringBuilder的区别
+     java的序列化机制是通过在运行时判断类的serialVersionUID来验证版本一致性的。在进行反序列化时，JVM会把传来的字节流中的serialVersionUID与本地相应实体（类）的serialVersionUID进行比较，如果相同就认为是一致的，可以进行反序列化，否则就会出现序列化版本不一致的异常。
+
+     当实现java.io.Serializable接口的实体（类）没有显式地定义一个名为serialVersionUID，类型为long的变量时，Java序列化机制会根据编译的class自动生成一个serialVersionUID作序列化版本比较用，这种情况下，只有同一次编译生成的class才会生成相同的serialVersionUID 。
+
+     如果我们不希望通过编译来强制划分软件版本，即实现序列化接口的实体能够兼容先前版本，未作更改的类，就需要显式地定义一个名为serialVersionUID，类型为long的变量，不修改这个变量值的序列化实体都可以相互进行串行化和反串行化。
+
+7. 是否可以继承string类
+     String类是final类故不能继承，一切由final修饰过的都不能继承
+
+8. String和StringBuffer、StringBuilder的区别
 
   可变性
 
@@ -52,8 +60,8 @@
   - AbstractStringBuffer是StringBulider和StringBuffer的公共父类，定义了一些字符串的基本操作，StringBuffer对方法加了同步锁或者对调用的方法加了同步锁，所以是线程安全的，StringBulider并没有对方法加同步锁，所以是非线程安全的
 
 8. hashCode和equals方法的关系
-  equals()反应的是对象或者变量具体的值，即两个对象里面包含的的值，可能是对象的引用，也可能是值类型的值。而hashcode()是对象或者变量通过哈希算法计算出的哈希值
-  equals相等，hashcode必相等，hashcode相等，equals可能不相等
+    equals()反应的是对象或者变量具体的值，即两个对象里面包含的的值，可能是对象的引用，也可能是值类型的值。而hashcode()是对象或者变量通过哈希算法计算出的哈希值
+    equals相等，hashcode必相等，hashcode相等，equals可能不相等
 
 9. 抽象类和接口的区别
 
@@ -65,9 +73,9 @@
   - 一个类只能继承一个抽象类，而一个类可以实现多个接口
 
 10. 自动装箱与拆箱
-  装箱：将基本类型用他们对应的引用类型包装起来
-  拆箱：将包装类型转换为基本的数据类型：
-  java使用自动装箱和拆箱机制，节省了常用数值的内存开销和创建对象的开销，提高了效率，由编译器来完成，编译器会在编译期根据语法决定是否进行装箱和拆箱操作
+    装箱：将基本类型用他们对应的引用类型包装起来
+    拆箱：将包装类型转换为基本的数据类型：
+    java使用自动装箱和拆箱机制，节省了常用数值的内存开销和创建对象的开销，提高了效率，由编译器来完成，编译器会在编译期根据语法决定是否进行装箱和拆箱操作
 
 11. 什么是泛型、为什么要使用以及泛型擦除
    - 泛型，即参数化类型，该集合只能保存其指定类型的元素，避免使用强制类型转换
@@ -91,9 +99,9 @@
 15. ArrayList和vector区别
 
 16. ArrayList和vector区别
-   arrayList和Vector都实现了list接口，都是通过数组实现的
-   Vector是线程安全的，而Arraylist是非线程安全的
-   list第一次创建的时候，会有一个初始大小，随着不断向List增加元素，当list认为容量不够的时候就会进行扩容，vector缺省情况下自动增长为原来一倍的数组长度，ArrayList增长为原来的50%
+      arrayList和Vector都实现了list接口，都是通过数组实现的
+      Vector是线程安全的，而Arraylist是非线程安全的
+      list第一次创建的时候，会有一个初始大小，随着不断向List增加元素，当list认为容量不够的时候就会进行扩容，vector缺省情况下自动增长为原来一倍的数组长度，ArrayList增长为原来的50%
 
 17. ArrayList和LinkList区别以及使用场景
    - ArrayList底层是使用数组实现的，可以认为ArrayList是一个可以改变大小的数组，随着越来越多的元素被添加到ArrayList中，其规模是动态增加的
@@ -101,19 +109,19 @@
    - LinkList更适合从中间插入或者删除（链表的特性），ArrayList更适合检索和在末尾插入和删除（数组的特性）
 
 18. Collection和Collections的区别
-   java.util.Collection是一个集合接口，他提供了对集合对象进行基本操作的通用接口方法。Collection接口在java类库中有很多具体的实现。Collection接口的意义是为各种具体的集合提供可最大化的统一的操作方式。
-   java.util.Collections是一个包装类，他包含各种有关集合操作的静态多态方法。此类不能实例化，就像一个工具类，服务于java的Collection框架
+      java.util.Collection是一个集合接口，他提供了对集合对象进行基本操作的通用接口方法。Collection接口在java类库中有很多具体的实现。Collection接口的意义是为各种具体的集合提供可最大化的统一的操作方式。
+      java.util.Collections是一个包装类，他包含各种有关集合操作的静态多态方法。此类不能实例化，就像一个工具类，服务于java的Collection框架
 
 19. Concurrenthashmap实现原理
 
 20. Error、Exception区别
-   Error和Exception类的父类都是throwable类，区别是：
+      Error和Exception类的父类都是throwable类，区别是：
 
    - Error一般是指与虚拟机相关的问题，如系统崩溃，虚拟机错误，内存空间不足，方法调用栈溢。对于这类错误的导致的应用程序中断，仅靠程序本身无法恢复和预防，遇到这样的错误，建议是让程序停止
    - Exception类表示程序可以处理的异常，可以捕获且可能恢复，遇到这类异常，应该尽可能处理异常，使程序恢复运行，而不应该随意终止异常
 
 21. UncheckedException和Checked Exception，各列举几个
-   UncheckedException
+      UncheckedException
 
    - 指的是程序的瑕疵或逻辑错误，并且在运行时无法恢复
    - 包括Error与RuntimeException及其子类，如OutOfMemoryError（内存溢出），UndeclaredThrowableException，IllegalArgumentException（传递了不合法的参数），IllegalMonitorStateException（违法的监控异常,当某个线程试图等待一个自己并不拥有的对象（O）的监控器或者通知其他线程等待该对象（O）的监控器时，抛出该异常),NullPointerException(空指针异常)，IllegalStateException（无效的状态异常），IndexOutOfBoundsException（数组越界）
@@ -128,14 +136,14 @@
 22. java中如何实现代理机制（JDK,CGLIB)
 
 23. 多线程实现方式
-   继承Thread类，实现Runnable接口、使用ExecutorService、Callable、Future实现有返回结果的多线程
+      继承Thread类，实现Runnable接口、使用ExecutorService、Callable、Future实现有返回结果的多线程
 
 24. 线程的状态转换
 
 25. 如何停止一个线程
 
 26. 什么是线程安全
-   线程安全就是多线程访问同一代码，不会产生不确定的结果
+      线程安全就是多线程访问同一代码，不会产生不确定的结果
 
 27. 如何保证线程安全
 
@@ -144,7 +152,7 @@
    - 多线程并发的情况下，线程共享的变量改为方法级的局部变量
 
 28. Synchronized如何使用
-   Synchronized是java中的关键字，是一种同步锁，它修饰的对象有以下几种：
+      Synchronized是java中的关键字，是一种同步锁，它修饰的对象有以下几种：
 
    - 修饰一个代码块，被修饰的代码块被称为同步语句块，其作用的范围是大括号{}括起来的代码，作用的对象是调用这个代码块的对象
 
@@ -154,8 +162,8 @@
    - 修改一个类，其作用的范围是synchronize后面括号括起来的部分 ，作用主的对象是这个类的所有对象
 
 29. synchronized和Lock的区别
-   主要相同点：Lock能完成synchronize所实现的所有功能
-   主要不同点：Lock有比synchronize更精准的线程语义和更好的性能，Lock的锁定是通过代码实现的，而synchronize是在JVM层面实现的，synchronize会自动释放锁，而Lock一定要求程序员手工释放，并且必须在finally从句中释放。Lock还有更强大的功能，例如他的tryLock方法可以非阻塞方式去拿锁，Lock锁的范围有局限性，块范围、而synchronize可以锁住块、对象、类
+      主要相同点：Lock能完成synchronize所实现的所有功能
+      主要不同点：Lock有比synchronize更精准的线程语义和更好的性能，Lock的锁定是通过代码实现的，而synchronize是在JVM层面实现的，synchronize会自动释放锁，而Lock一定要求程序员手工释放，并且必须在finally从句中释放。Lock还有更强大的功能，例如他的tryLock方法可以非阻塞方式去拿锁，Lock锁的范围有局限性，块范围、而synchronize可以锁住块、对象、类
 
 30. 多线程如何进行信息交互
    - void notify()唤醒此对象监视器的等待的单个线程
@@ -169,11 +177,11 @@
    - sleep方案导致了程序暂停执行指定的时间，让出cpu给其他线程，但他的监控状态依然保持着，当指定的时间到了又会自动恢复到运行状态，在调用sleep方法的过程中，线程不会释放对象锁。而调用wait方案的时候，线程会释放对象锁，进入等待此对象的等到锁定池，只有针对此对象调用notify方法后本线程才进入对象锁定池准备
 
 32. 多线程与死锁
-   死锁是指两个或两个以上的进程在执行过程中，因争夺资源而造成的一种互相等待的现象，若无外力作用，他们都将无法进行下去
-   产生死锁的原因：因为系统资源不足；进程运行推进的顺序不合适；资源分配不当
+      死锁是指两个或两个以上的进程在执行过程中，因争夺资源而造成的一种互相等待的现象，若无外力作用，他们都将无法进行下去
+      产生死锁的原因：因为系统资源不足；进程运行推进的顺序不合适；资源分配不当
 
 33. 如何才能产生死锁
-   产生死锁的四个必要条件
+      产生死锁的四个必要条件
 
    - 互斥条件：所谓互斥就是在某一时间独占资源
    - 请求与保持条件：一个进程因请求资源而阻塞的时，对已获得的资源保持不放
@@ -181,13 +189,13 @@
    - 循环等待条件：若干进程之间形成的一种头尾相接的循环等待资源关系
 
 34. 死锁的预防
-   打破产生死锁的四个必要条件中的一个或几个，保证系统不会进入死锁状态
+      打破产生死锁的四个必要条件中的一个或几个，保证系统不会进入死锁状态
 
    - 打破互斥条件，即允许进程同时访问某些资源，但是有的资源是不允许被同时访问的，像打印机等等,这是由资源本身的属性据决定的，所以这种方案并无实用价值
    - 打破不可抢占条件，即允许进程强行从占用者那里夺取，就是说当一个进程已经占有了某些资源，以后再重新申请，他所释放的资源可以分配给其他进程，这就相当于该进程占有的资源被隐蔽地强占了，这种预防死锁的方法实现起来困难，会降低系统性能
 
 35. 什么叫守护线程，用什么方法实现守护线程
-   守护进程是为其他线程的运行提供服务的进程；setDaemon（boolean on）方法的设置线程的Daemon模式，ture为守护模式，false为用户模式
+      守护进程是为其他线程的运行提供服务的进程；setDaemon（boolean on）方法的设置线程的Daemon模式，ture为守护模式，false为用户模式
 
 36. java线程池技术与原理
 
@@ -219,11 +227,11 @@
    - 当两个进程在进行远程通信的时候，彼此可以发送各种类型的数据，无论是何种类型的数据，都会以二进制序列的形式
 
 42. 常见的序列化协议
-   Protobuf，Thrift，Hessian，Kryo
+      Protobuf，Thrift，Hessian，Kryo
 
 43. 内存溢出与内存泄漏的区别
-   内存溢出是指程序在申请内存时，没有足够的内存空间供其使用，出现out of memory
-   内存泄漏是指分配出去的内存不再使用，但是无法回收
+      内存溢出是指程序在申请内存时，没有足够的内存空间供其使用，出现out of memory
+      内存泄漏是指分配出去的内存不再使用，但是无法回收
 
 44. java内存模型及各个区域的OOM，如何重现OOM
 

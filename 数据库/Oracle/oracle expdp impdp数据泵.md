@@ -32,7 +32,6 @@ using 'ip address/orcl';
 
 expdp system/sys directory=dir_dp dumpfile=dgpfp.dmp logfile=dgpdg20171115.log SCHEMAS=dgpfp  
 
-
 总结：
 执行impdp时无需创建b用户，在导入时会自动创建并改名用户a为b（拥有a的所有权限等），自动设置默认表空间为转换后的表空间b。如果有多个表空间需要转换，则使用多个remap_tablespace=源表空间：目标表空间。此种方法只限于支持oracle10g以上版本。
 
@@ -45,3 +44,6 @@ expdp system/sys@orcl directory=expdir dumpfile=dgpfp20180411.dmp logfile=dgpdg2
 impdp system/sys@orcl directory=expdir dumpfile=dgpfp20180411.dmp remap_tablespace=dgpfp:dgpdg remap_schema=dgpfp:dgpdg logfile=impdgpfp.log
 
 impdp dgpmobile/pass@orcl directory=expdir dumpfile=DGPTZHOU20180711.DMP remap_tablespace=dgptzhou:dgpmobile remap_schema=dgptzhou:dgpmobile logfile=impdgptzhou.log
+
+impdp dgpdglc/pass@orcl directory=expdir dumpfile=DGPOMS.DMP remap_tablespace=dgpoms:dgpdglc remap_schema=dgpoms:dgpdglc logfile=impdgpoms.log
+

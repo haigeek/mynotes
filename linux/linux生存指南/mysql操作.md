@@ -1,5 +1,8 @@
 # mysql命令查询手册
 ## 常用指令
+
+
+
 - 建立数据库
 `create datebase [name]`
 - 设置数据库编码

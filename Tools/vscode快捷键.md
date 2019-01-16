@@ -7,3 +7,4 @@ tags : vscode
 - 打开终端 ctrl+shift+Y
 - 打开所有命令 F1/ctrl+shift+P
 - 转到文件 ctrl+P
+

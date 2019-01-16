@@ -35,3 +35,14 @@ cd /usr/local/nginx/sbin
 ./nginx -s stop #停止
 ./nginx -s reload #更新配置文件
 ```
+
+nginx在mac下使用brew安装
+
+相关路径
+
+```
+/usr/local/etc/nginx/nginx.conf （配置文件路径）
+/usr/local/var/www （服务器默认路径）
+/usr/local/Cellar/nginx/1.6.2 （安装路径）
+```
+
