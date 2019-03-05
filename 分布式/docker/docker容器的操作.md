@@ -13,15 +13,40 @@ hello word
 root@d2499c769aea:/# 
 ```
 其中， -t 选项让Docker分配一个伪终端（pseudo-tty）并绑定到容器的标准输入上， -i则让容器的标准输入保持打开。
+
+端口映射
+
+当docker启动的时候，可以是使用-P和-p进行端口的映射，将内部的端口映射出来
+
+-P 随机映射
+
+-p 指定端口映射
+
+```
+docker run -d -p 8080:8080 c8d8d44b57ad ##将内部的8080映射为宿主机的8080
+```
+
+数据卷映射
+
+使用-v进行文件卷的映射
+
+```
+docker run -d -v  ~/www:/www -v $PWD/conf/nginx.conf:/etc/nginx/nginx.conf -v $PWD/logs:/wwwlogs  -d nginx   #	将宿主机中当前目录下的www挂载到容器的/www、conf、wwwlogs类比
+```
+
+
+
 ## 后台运行
 -d 参数可以使得docker在后台运行
 在不使用-d参数的时候，容器会将输出结果直接打印在宿主机上面
 使用-d 参数运行容器将不会将输出进行打印，而是需要用户使用 docker container logs[container id or names]来查看输出
+
 ## 终止启动的容器
 使用docker container stop来终止运行中的容器
 只启动了一个终端的容器，用户通过 exit 命令或 Ctrl+d 来退出终端时，所创建的容器立刻终止。
 处于终止状态的容器，可以通过 docker container start 命令来重新启动。
 此外， docker container restart 命令会将一个运行态的容器终止，然后再重新启动它。
+
 ## 进入容器
 在需要进入容器进行操作的时候，可以使用 docker attach命令或者docker exec命令
 - attach

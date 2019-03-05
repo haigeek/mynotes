@@ -304,3 +304,15 @@ git推送到远程错误的文件怎么处理
 然后强制推送当前这个版本到云端
 
 `git push origin HEAD --force`
+
+git取消对某个文件的追踪
+
+```
+$ git rm --cached <filename>
+
+如果是目录的话：
+
+$ git rm -r --cached <foldername>
+
+```
+
