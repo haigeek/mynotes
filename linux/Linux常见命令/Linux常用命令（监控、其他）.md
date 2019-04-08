@@ -2,6 +2,20 @@
 
 ## 性能监控和优化命令
 
+top
+
+ps
+
+free
+
+vmstat
+
+iostat
+
+lsof
+
+
+
 ## 其他命令
 
 查看系统的版本
@@ -16,4 +30,8 @@ cat /etc/redhat-release
 cat /proc/version
 ```
 
-## 
+diff
+
+grep
+
+wc

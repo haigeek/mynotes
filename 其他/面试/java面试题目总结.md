@@ -103,7 +103,7 @@
       Vector是线程安全的，而Arraylist是非线程安全的
       list第一次创建的时候，会有一个初始大小，随着不断向List增加元素，当list认为容量不够的时候就会进行扩容，vector缺省情况下自动增长为原来一倍的数组长度，ArrayList增长为原来的50%
 
-17. ArrayList和LinkList区别以及使用场景
+17. **ArrayList和LinkList区别以及使用场景**
    - ArrayList底层是使用数组实现的，可以认为ArrayList是一个可以改变大小的数组，随着越来越多的元素被添加到ArrayList中，其规模是动态增加的
    - LinkList底层是通过双向链表实现的，LinkList和ArrayList相比，增删的速度比较快，但是查询和修改值的速度较慢。同时，LinkList还实现可Queue接口，所以提供了offer()（添加一个元素并并返回tu）,peek()（返回队列头部的元素）,pool()（移除并返回队列头部的元素）等方法
    - LinkList更适合从中间插入或者删除（链表的特性），ArrayList更适合检索和在末尾插入和删除（数组的特性）

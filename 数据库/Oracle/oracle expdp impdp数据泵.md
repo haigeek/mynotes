@@ -16,6 +16,8 @@ using 'ip address/orcl';
 
 `Grant read,write on directory dir_name to user_name;`
 
+`Grant read,write on directory dir_name to user_name;`
+
 ## 执行导出
 1. 按照表模式导出
 2. 按照查询条件导出

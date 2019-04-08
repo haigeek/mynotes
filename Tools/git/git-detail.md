@@ -8,6 +8,7 @@
 [git协同开发实例 ]()
 
 [git操作情境讨论（欢迎提出）]() 
+
 ## 基本操作
 
 ### git安装
@@ -207,7 +208,7 @@ __合并图解如下：__
 
 如果待合并的分支在当前分支的下游，也就是说没有分叉时，会发生快速合并，</span></span>git会提示我们此次合并是快速合并。
 
-![image.png | left | 542x116](https://cdn.nlark.com/yuque/0/2018/png/84598/1534487066424-6491cd56-4bf8-44bd-8f07-7659a2259b49.png "")
+​				![image.png](https://cdn.nlark.com/yuque/0/2018/png/84598/1534487066424-6491cd56-4bf8-44bd-8f07-7659a2259b49.png "")
 这种方法相当于直接把master分支移动到test分支所在的地方，并移动HEAD指针。
 
 2、普通合并方式
@@ -253,18 +254,6 @@ v1.0
 
 ![image.png | left | 558x246](https://cdn.nlark.com/yuque/0/2018/png/84598/1534411582611-7179c4e3-4cc9-4b65-811c-b284bf6c695d.png "")
 
-在克隆结束仓库之后，最好在本地这个仓库使用本地 set 的方法设置 gitlab 用户名和email(如果本机没有GitHub的环境可以忽略)
-
-```shell
-git config —local user.name ‘XXX’ git config —local user.email ‘xxx@dist.com.cn
-```
-
-![image.png | left | 515x93](https://cdn.nlark.com/yuque/0/2018/png/84598/1534411961840-a953530b-1f89-4b72-961c-061c6fdcc071.png "")
-
-设置完之后可以使用`git config --list` 查看
-
-![image.png | left | 531x32](https://cdn.nlark.com/yuque/0/2018/png/84598/1534411979067-5f94d397-8ca8-4035-9e35-8dfd99e21d0c.png "")
-
 设置完成之后将本地文件推到远程dev
 
 ![image.png | left | 564x237](https://cdn.nlark.com/yuque/0/2018/png/84598/1534412158716-03f94d7e-5cea-4004-ab24-7d6c16f33c4c.png "")
@@ -287,11 +276,7 @@ git提示我们 这是dev分支.txt 有冲突，那么我们就针对这个文�
 
 ![image.png | left | 562x304](https://cdn.nlark.com/yuque/0/2018/png/84598/1534473064442-cb4292a0-9b47-4f54-9787-68ac18019966.png "")
 
-## 在IDE中使用git（待补充）
 
-很多IDE里面已经很方便的集成了Git，这里以idea为例，在idea中点击VCS工具栏，查看菜单就可以完成对于功能，建议先熟悉命令行方式。
-
-## gitlab-ci（待补充）
 
 ## 常见问题的解决
 
@@ -316,3 +301,13 @@ $ git rm -r --cached <foldername>
 
 ```
 
+## git使用情境
+
+- 在本地将一个文件夹初始化为一个仓库，然后又在远程新建了一个仓库，怎么将本地和远程仓库关联
+
+1. 首先尝试将本地的仓库和远程，使用命令 `git remote add origin [url]`
+2. git 提示我们将本地的分支与远程的分支进行关联，使用`git push --set-upstream origin master`
+3. 将远程仓库的数据使用 `git pull ...` 进行拉取，这个命令相当于拉取并合并，但是在和本地的分支进行合并的时候，会出现冲突
+   `fatal: refusing to merge unrelated histories` 这是因为git 认为合并了两个不同的开始提交的仓库，这两个仓库可能不是同一个。
+4. 使用`git pull origin master --allow-unrelated-histories`来进行合并来告诉git我们将这两个仓库进行合并
+5. 建议还是先在远程积进行仓库的建立再clone本地进行开发
