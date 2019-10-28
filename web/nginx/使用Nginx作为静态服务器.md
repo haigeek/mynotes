@@ -15,7 +15,31 @@ server {
             root   /Users/haigeek/Downloads;
         }
 ```
+设置访问密码：
+
+安装：
+
+```
+yum -y install httpd-tools
+```
+
+生成密码
+
+```
+htpasswd -c /usr/local/nginx/passwd distpass
+```
+
+配置
+
+```
+auth_basic "Please input password"; #这里是验证时的提示信息 
+auth_basic_user_file /usr/local/src/nginx/passwd;
+```
+
+
+
 ### 前后端分离的静态应用
+
 将前端应用部署在nginx的文件夹下，配置好api的地址，可以将nginx作为前端的服务器运行前端应用
 ```nginx
 server {
@@ -30,3 +54,4 @@ server {
         }
 ```
 在浏览器输入对于的ip加端口加应用名即可访问
+

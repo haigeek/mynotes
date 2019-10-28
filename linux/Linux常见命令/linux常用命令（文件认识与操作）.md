@@ -1,4 +1,4 @@
-# linux常用命令（文件认识与操作）
+# omclinux常用命令（文件认识与操作）
 ## 文件和属性目录
 
 #### linux目录结构
@@ -316,4 +316,8 @@ head 取出文件后几行
 - -f 循环读取，tail -f filename会把filename里最尾部的内容显示在屏幕上,并且不但刷新,使你看到最新的文件内容. 在查看tomcat的日志的时候是一个很好的应用场景
 
 
+
+参考链接：
+
+> https://www.cnblogs.com/peida/archive/2012/12/05/2803591.html
 

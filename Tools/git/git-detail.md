@@ -235,6 +235,8 @@ __合并图解如下：__
 
 4、合并分支的时候，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，可以看出曾经做过合并，而fast forward则看不出来
 
+5、本地分支与远程分支的关联指令：git branch --set-upstream-to=origin/add_orderdesc
+
 ### 标签管理
 
 发布一个版本时，我们通常先在版本库中打一个标签（tag），这样，就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签的时刻的历史版本取出来。所以，标签也是版本库的一个快照。我们在发布一个版本的时候，会对应有一个commit， 但是这个commit可能是比较难记的，所以我们选择一个好记忆的方式tag，例如v1.0 与某个commit绑定。
@@ -311,3 +313,4 @@ $ git rm -r --cached <foldername>
    `fatal: refusing to merge unrelated histories` 这是因为git 认为合并了两个不同的开始提交的仓库，这两个仓库可能不是同一个。
 4. 使用`git pull origin master --allow-unrelated-histories`来进行合并来告诉git我们将这两个仓库进行合并
 5. 建议还是先在远程积进行仓库的建立再clone本地进行开发
+6. 更新远程分支列表  git remote update origin  --prune

@@ -178,7 +178,7 @@ netstat -at
 
 显示所有的tcp端口
 
-netstat -ap | grep ssh
+netstat -an | grep ssh
 
 找出程序运行的端口
 

@@ -16,8 +16,6 @@ using 'ip address/orcl';
 
 `Grant read,write on directory dir_name to user_name;`
 
-`Grant read,write on directory dir_name to user_name;`
-
 ## 执行导出
 1. 按照表模式导出
 2. 按照查询条件导出
@@ -37,6 +35,7 @@ expdp system/sys directory=dir_dp dumpfile=dgpfp.dmp logfile=dgpdg20171115.log S
 总结：
 执行impdp时无需创建b用户，在导入时会自动创建并改名用户a为b（拥有a的所有权限等），自动设置默认表空间为转换后的表空间b。如果有多个表空间需要转换，则使用多个remap_tablespace=源表空间：目标表空间。此种方法只限于支持oracle10g以上版本。
 
+```
 expdp system/sys directory=exp_dir dumpfile=dgpfp.dmp logfile=dgpfp20180411.log SCHEMAS=dgpfp  
 
 create directory expdir as 'D:/exp_dir';
@@ -48,4 +47,10 @@ impdp system/sys@orcl directory=expdir dumpfile=dgpfp20180411.dmp remap_tablespa
 impdp dgpmobile/pass@orcl directory=expdir dumpfile=DGPTZHOU20180711.DMP remap_tablespace=dgptzhou:dgpmobile remap_schema=dgptzhou:dgpmobile logfile=impdgptzhou.log
 
 impdp dgpdglc/pass@orcl directory=expdir dumpfile=DGPOMS.DMP remap_tablespace=dgpoms:dgpdglc remap_schema=dgpoms:dgpdglc logfile=impdgpoms.log
+
+impdp dgpdgdz/pass@orcl directory=expdir dumpfile=DGPOMS20190705.DMP remap_tablespace=dgpoms:dgpdgdz remap_schema=dgpoms:dgpdgdz logfile=impdgpoms.log
+
+expdp dgpnr_pro/nr#2019@52.82.72.141/orcl dumpfile =dgpnr_pro_pws_expdp_20190713.dmp logfile=dgpnr_pro_pws_expdp_20190713.log directory=dump_dir tables=PWS_STATUS,PWS_WORK_TASK,PWS_TASK_STATUS,PWS_WORK_BATCH,DIS_REGION
+
+```
 

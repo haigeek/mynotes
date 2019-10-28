@@ -28,40 +28,53 @@ docker容器(Container)：镜像启动后的实例称为一个容器；容器是
 
 1、检查内核版本，必须是3.10及以上
 
+```
 uname -r
+```
 
 2、安装docker
 
+```
 yum install docker
+```
 
 3、输入y确认安装
 
 4、启动docker
 
+```
 [root@localhost ~]# systemctl start docker
 
 [root@localhost ~]# docker -v
 
 Docker version1.12.6, build 3e8e77d/1.12.6
+```
 
 5、开机启动docker
 
+```
 [root@localhost ~]# systemctl enable docker
 
 Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
+```
 
 6、停止docker
 
+```
 systemctl stop docker
+```
 
 ### 卸载步骤：
 
 1首先搜索已经安装的docker 安装包
 
+```
 [root@localhost ~]# yum list installed|grep docker
+```
 
 或者使用该命令
 
+```
 [root@localhost ~]# rpm -qa|grep docker
 
 docker.x86_64 2:1.12.6-16.el7.centos @extras
@@ -69,24 +82,31 @@ docker.x86_64 2:1.12.6-16.el7.centos @extras
 docker-client.x86_64 2:1.12.6-16.el7.centos @extras
 
 docker-common.x86_64 2:1.12.6-16.el7.centos @extra
+```
 
 2 分别删除安装包
 
+```
 [root@localhost ~]#yum –y remove docker.x86_64
 
 [root@localhost ~]#yum –y remove docker-client.x86_64
 
 [root@localhost ~]#yum –y remove docker-common.x86_64
+```
 
 3 删除docker 镜像
 
+```
 [root@localhost ~]# rm -rf /var/lib/docker
+```
 
 4 再次check docker是否已经卸载成功
 
+```
 [root@localhost ~]# rm -rf /var/lib/docker
 
 [root@localhost ~]#
+```
 
 如果没有搜索到，那么表示已经卸载成功。
 

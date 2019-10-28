@@ -2,6 +2,14 @@
 ## 数据库与集合
 ### 数据库连接
 
+在终端连接mongo
+
+```
+mongo 192.168.1.110:27017
+```
+
+
+
 ### 创建数据库
 - `use DATABASE_NAME` 创建数据库，如果数据已经存在，切换到对应的数据库
 - `show dbs`显示所有的数据库
@@ -95,3 +103,4 @@ db.col.find({key1:value1, key2:value2}).pretty()
 ### 备份与恢复
 ### 监控
 ### MongoDB java
+

@@ -22,10 +22,17 @@ docker run --name nginx -p 8079:80 -v /Users/haigeek/software/docker/nginx/www:/
 
 安装oracle
 
-docker run -d -v /data/kongchao/docker_volume/oracle_data:/data/oracle_data -p 49160:22 -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
+
+
+docker run -d -v /Users/haigeek/software/docker/oracleData:/data/oracle_data  -p 1521:1521 wnameless/oracle-xe-11g
 
 
 
+
+
+```
+docker run --name oracle11g -d -v /usr/software/oradata:/oradata -p 1521:1521 -e ORACLE_ALLOW_REMOTE=true registry.cn-shanghai.aliyuncs.com/haigeek/oracle11g:1.0
+```
 
 
 

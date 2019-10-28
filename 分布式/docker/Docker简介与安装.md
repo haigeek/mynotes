@@ -3,12 +3,12 @@
 Docker是一个开源的应用容器引擎；是一个轻量级容器技术；
 
 ![image.png](https://cdn.nlark.com/yuque/0/2019/png/84598/1554633390599-5f5ad709-18ba-4a43-a4d6-d55650938581.png#align=left&display=inline&height=142&name=image.png&originHeight=142&originWidth=215&size=17108&status=done&width=215)
-<a name="84b6f2b0"></a>
 ## 1、简介
 Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像；运行中的这个镜像称为容器，容器启动是非常快速的。
 
 ![image.png](https://cdn.nlark.com/yuque/0/2019/png/84598/1554633372295-68342563-eeb6-47a8-a9cd-0e74716297ac.png#align=left&display=inline&height=362&name=image.png&originHeight=362&originWidth=539&size=118543&status=done&width=539)
 <a name="caa034e6"></a>
+
 ## 2、docker的优点
 **更轻量**镜像尺寸小 ，资源利用率高 。我们方便去牵引，牵引的话如果已经有一些镜像存在的话，镜像尺寸就比较小。同时因为它没有虚拟机那么重，所以它的健壮率会很高。**更快速**直接运行在宿主机上，没有IO转换负担。它就是宿主机上的一个进程，启一个进程是非常快的，没有像虚拟机还要进行CPU，内存的这些时间的消耗，并且docker它利用率高也体现。**更便捷**易安装，易使用，迁移方便，数据量小。安装docker就通过一个命令，一个脚本就把docker装起来，也很方便去使用，我们只有熟悉docker的命令，我们就可以把它运用起来。迁移的时候，我们不要去迁移docker，我们去迁移的是容器的镜像，数据量小也体现在镜像的分层技术，同一批镜像，如果有很多个，它是重复的，它只会占用一个磁盘空间。
 <a name="fcd5525d"></a>
