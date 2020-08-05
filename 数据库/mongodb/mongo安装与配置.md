@@ -27,3 +27,5 @@ db.createUser({user: 'root', pwd: '123456', roles: ['root']})
 
 mongo默认是没有开启访问控制的，使用--auth参数重启mongo服务，`mongod --dbpath 存放数据库文件夹路径 --auth`一旦开启了，用户连接mongod必须指定用户名和密码。
 
+
+

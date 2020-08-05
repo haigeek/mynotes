@@ -12,6 +12,4 @@
 
 
 
-
-
 -Xloggc:/home/tomcat/tomcat-8086/logs/gc/tomcat_gc.log

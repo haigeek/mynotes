@@ -16,3 +16,16 @@
     git push
 
 #### 
+
+```
+git branch branch_name   remote_name/branch 
+```
+
+ 基于远程仓库创建新分支
+
+```
+git checkout -b branch_name   remote_name/branch
+```
+
+基于远程仓库创建新分支并且切换到新分支
+

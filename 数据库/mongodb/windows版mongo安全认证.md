@@ -114,7 +114,7 @@ Successfully added user: { "user" : "myUserAdmin", "roles" : [ "userAdminAnyData
 - 根据配置文件启动mongo
 
   ```shell
-  E:\Mongo4.0\bin\mongod.exe --config "E:\Mongo4.0\mongod.cfg" --install
+  E:\Mongo4.0\bin\mongod.exe --config "E:\Mongo4.0\mongod.cfg" --install  --serviceName "MongoDB"
   ```
 
   - 注意bin路径和配置文件的路径

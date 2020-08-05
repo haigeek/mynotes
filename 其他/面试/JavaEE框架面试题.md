@@ -50,9 +50,7 @@
 
 15. springmvc用过哪些注解
 
-16. Restful有几种请求
-
-17. Restful好处
+16. Restful有几种请求，有什么好处
 
 18. Tomcat、Apache、JBoss的区别
 

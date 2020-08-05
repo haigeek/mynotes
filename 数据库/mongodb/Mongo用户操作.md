@@ -2,13 +2,17 @@
 
 新建管理员用户
 
+	use admin
+	
 	db.createUser(
-	  {
-		user: "mySuperAdmin",
-		pwd: "xxx",
-		roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
-	  }
-	)
+		  {
+			user: "adminuser",
+			pwd: "passw0rd",
+			roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+		  }
+		)
+	
+	db.auth('adminuser','passw0rd')
 新建普通用户
 
 ```
