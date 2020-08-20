@@ -92,3 +92,9 @@ docker image ls 命令来配合删除镜像
 ```
 docker image rm $(docker image ls -q redis)
 ```
+
+批量删除没有tag的none镜像
+
+```
+docker rmi $(docker images | grep "none" | awk '{print $3}') 
+```
