@@ -100,3 +100,17 @@ db.tb_name.find({"status":{$type:1}}).forEach(function(x){x.status=NumberInt(x.s
 17 Timestamp 特殊语义的时间戳数据类型
 
 18 64-bit integer 64位整数类型
+
+
+
+
+
+mongo时间查询
+
+```
+(>) 大于 - $gt
+(<) 小于 - $lt
+(>=) 大于等于 - $gte
+(<= ) 小于等于 - $lte
+```
+
