@@ -236,6 +236,16 @@ centos7默认的使用firewalld防火墙
 
 查看是否拒绝： firewall-cmd --query-panic
 
+
+
+增加端口：
+
+```
+firewall-cmd --zone=public --add-port=30300/tcp --permanent
+```
+
+
+
 ## 磁盘存储相关
 
 df

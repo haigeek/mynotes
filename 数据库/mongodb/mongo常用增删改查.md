@@ -114,3 +114,58 @@ mongo时间查询
 (<= ) 小于等于 - $lte
 ```
 
+
+
+mongo查询数组是否为空
+
+```
+db.getCollection('dus_apply_view').find({"embedProxy":{$size:0}})
+```
+
+
+
+删除某个字段
+
+
+
+```
+db.getCollection('dus_proxy').update({},{$unset:{"orgname":""}},false,true)
+```
+
+
+
+删除索引
+
+
+
+```
+db.COLLECTION_NAME.dropIndex("INDEX-NAME")
+```
+
+
+
+不等于
+
+```
+db.getCollection('dus_proxy').find({"user":{"$ne":"5f2bfb6abffbc0171c24ee2e"}})
+```
+
+
+
+联表查询
+
+```
+db.getCollection('dus_apply_cart').aggregate([
+   {
+     $lookup:
+       {
+  from: 'dus_proxy',
+  localField: 'serviceId',
+  foreignField: '_id',
+  as: 'proxy'
+}
+  },
+  { $match : {"proxy" : [ ]} }
+])
+```
+
