@@ -33,7 +33,7 @@ at org.apache.axis.client.Call.invoke(Call.java:1812)
 
 #### 三次握手
 
-![](/Users/haigeek/dev/blog/source/images/tcp-handshake.png)
+![](images/tcp-handshake.png)
 
 tcp的三次握手的流程如下：
 
@@ -45,7 +45,7 @@ tcp的三次握手的流程如下：
 
 #### 四次挥手
 
-![tcp-bye](../../../dev/blog/source/images/tcp-bye.png)
+![tcp-bye](images/tcp-bye.png)
 
 tcp的四次挥手的流程如下：
 
