@@ -150,8 +150,8 @@
     - C
       - [c结构指针基础](/Programming/C/c结构指针基础.md)
     - C#
-      - [c#中的is和as](/Programming/C#/c#中的is和as.md)
-      - [c#中的委托和事件](/Programming/C#/c#中的委托和事件.md)
+      - [is和as](/Programming/C#/is和as.md)
+      - [委托和事件](/Programming/C#/委托和事件.md)
     - 数据结构
       - 剑指offer题解笔记
         - [从后往前输出链表](/Programming/数据结构/剑指offer题解笔记/从后往前输出链表.md)
