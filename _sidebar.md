@@ -94,13 +94,13 @@
       - [Java8 Optional的使用](/Java/Java高级/Java8%20Optional的使用.md)
       - [Java8新特性之stream](/Java/Java高级/Java8新特性之stream.md)
       - [Java使用自定义注解](/Java/Java高级/Java使用自定义注解.md)
+      - [Java异常](/Java/Java高级/Java异常.md)
+      - [Java核心技术36讲笔记](/Java/Java高级/Java核心技术36讲笔记.md)
       - [Java的动态代理](/Java/Java高级/Java的动态代理.md)
       - [Java的反射](/Java/Java高级/Java的反射.md)
       - [Java线程笔记](/Java/Java高级/Java线程笔记.md)
       - [Netty的入门与使用](/Java/Java高级/Netty的入门与使用.md)
       - [javaNIO基础学习](/Java/Java高级/javaNIO基础学习.md)
-      - [java异常](/Java/Java高级/java异常.md)
-      - [java核心技术36讲笔记](/Java/Java高级/java核心技术36讲笔记.md)
       - [什么是RPC](/Java/Java高级/什么是RPC.md)
       - [使用Netty实现一个RPC框架](/Java/Java高级/使用Netty实现一个RPC框架.md)
     - web容器
@@ -117,13 +117,13 @@
       - [linux常用命令（用户、权限）](/Linux/Linux常见命令/linux常用命令（用户、权限）.md)
       - [vim学习笔记](/Linux/Linux常见命令/vim学习笔记.md)
     - [Linux更改默认的ssh端口](/Linux/Linux更改默认的ssh端口.md)
+    - Linux生存指南
+      - [mysql操作](/Linux/Linux生存指南/mysql操作.md)
     - Linux软件的安装与配置
       - [Centos7升级python2到python3](/Linux/Linux软件的安装与配置/Centos7升级python2到python3.md)
       - [pure ftpd安装](/Linux/Linux软件的安装与配置/pure-ftpd安装.md)
       - [vsftpd安装](/Linux/Linux软件的安装与配置/vsftpd安装.md)
     - [Linux运维常用命令](/Linux/Linux运维常用命令.md)
-    - linux生存指南
-      - [mysql操作](/Linux/linux生存指南/mysql操作.md)
     - [shell分享](/Linux/shell分享.md)
     - [vsftp乱码](/Linux/vsftp乱码.md)
   - MicroService
