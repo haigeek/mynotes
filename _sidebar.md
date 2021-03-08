@@ -148,10 +148,10 @@
       - [我又双叒叕玩起了音乐盒](/Others/随笔/我又双叒叕玩起了音乐盒.md)
   - Programming
     - C
-      - [c结构指针基础](/Programming/C/c结构指针基础.md)
-    - C#
-      - [is和as](/Programming/C#/is和as.md)
-      - [委托和事件](/Programming/C#/委托和事件.md)
+      - [c structure pointer](/Programming/C/c-structure-pointer.md)
+    - CSharp
+      - [is和as](/Programming/CSharp/is和as.md)
+      - [委托和事件](/Programming/CSharp/委托和事件.md)
     - 数据结构
       - 剑指offer题解笔记
         - [从后往前输出链表](/Programming/数据结构/剑指offer题解笔记/从后往前输出链表.md)
