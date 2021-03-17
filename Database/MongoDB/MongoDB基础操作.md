@@ -23,6 +23,13 @@ options参数主要有以下几个参数
 - autoIndexId 布尔型 可以自动在_id字段创建索引，默认为false
 - size 数值型 为固定集合指定一个最大值（以字节计）。
 - max 数值型 指定固定集合中包含文档的最大数量。
+
+Eg：
+
+```
+db.createCollection("name", false)
+```
+
 ### 删除集合
 - `show collection` 查看集合
 - `db.collection.drop()` 删除集合
@@ -31,6 +38,21 @@ MongoDB里的文档数据结构和JSON基本一致，所有存储在集合中的
 ### 插入文档
 - `db.COLLECTION_NAME.insert(document)` 使用insert()或者save()方法进行插入,在进行插入的时候，假如集合不在数据库中，MongoDB 会自动创建该集合并插入文档。
 - 可以将数据定义为一个变量，再执行插入操作，将该变量插入。
+
+eg:
+
+```
+db.test.insert({
+app : null,
+version : "1.0.0",
+script : null,
+createTime : NumberLong(1614302605963),
+remark : "初始化字典数据"
+})
+```
+
+
+
 ### 更新文档
 update()来进行文档的更新，更新格式如下
 ```sql

@@ -40,6 +40,22 @@ final修饰的类不能被继承，被fina修饰的类的方法自动被变成fi
 
 一个类具有私有的构造函数，那么这个类就变成了final类
 
+问题：
+
+使用final关键字修饰一个变量时，是引用不能变，还是引用的对象不能变；
+
+```
+final StringBuffer a=new StringBuffer("immutable");
+执行如下语句将报告编译期错误：
+
+a=new StringBuffer("");
+但是，执行如下语句则可以通过编译：
+
+a.append(" broken!"); 
+```
+
+
+
 ### 修饰域
 
 将实例域定义为final的时候，构造对象的时候必须初始化这样的域，且不能被修改

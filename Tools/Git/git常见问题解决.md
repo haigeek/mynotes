@@ -21,6 +21,14 @@ $ git rm -r --cached <foldername>
 
 ```
 
+git 合并某个分支的某个文件或者文件夹
+
+```
+git checkout dev /root/src/main/xxxx
+```
+
+其中 `/root/src/main/xxxx`表示路径 可以是具体的文件 也可以文件夹
+
 ## git使用情境
 
 - 在本地将一个文件夹初始化为一个仓库，然后又在远程新建了一个仓库，怎么将本地和远程仓库关联

@@ -155,7 +155,7 @@ docker image ls -a
 
 ### 镜像的导入导出
 
-#### 导入
+#### 导出
 
 ```
 docker save 名/id >容器名.tar
@@ -165,7 +165,7 @@ docker save 名/id >/usr/local/docker/容器名.tar
 
 默认导出位置在当前执行命令的路径
 
-#### 导出
+#### 导入
 
 ```
 docker load <容器名.tar
