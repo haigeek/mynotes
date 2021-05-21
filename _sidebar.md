@@ -1,5 +1,4 @@
   - ComputerScience
-  
     - [TPS&QPS](/ComputerScience/TPS&QPS.md)
     - [Windows操作指令](/ComputerScience/Windows操作指令.md)
     - [一次Tcp端口耗尽引发的思考](/ComputerScience/一次Tcp端口耗尽引发的思考.md)
@@ -12,6 +11,7 @@
       - [mongo安装与配置](/Database/MongoDB/mongo安装与配置.md)
       - [mongo常用增删改查](/Database/MongoDB/mongo常用增删改查.md)
       - [mongo开启安全验证](/Database/MongoDB/mongo开启安全验证.md)
+      - [mongo的复制集](/Database/MongoDB/mongo的复制集.md)
       - [mongo的视图](/Database/MongoDB/mongo的视图.md)
       - [windows版mongo安全认证](/Database/MongoDB/windows版mongo安全认证.md)
     - Oracle
@@ -24,6 +24,7 @@
       - [oracle使用笔记](/Database/Oracle/oracle使用笔记.md)
       - [oracle安全策略设置](/Database/Oracle/oracle安全策略设置.md)
     - PostgreSQL
+      - [命令备忘](/Database/PostgreSQL/命令备忘.md)
       - [递归查询](/Database/PostgreSQL/递归查询.md)
     - Redis
       - [Redis指令](/Database/Redis/Redis指令.md)
@@ -39,8 +40,13 @@
       - [Jenkins安装](/DevOps/Jenkins/Jenkins安装.md)
       - [Jenkins快速复制已经存在的项目](/DevOps/Jenkins/Jenkins快速复制已经存在的项目.md)
       - [Jenkins自动部署项目到远程windows主机](/DevOps/Jenkins/Jenkins自动部署项目到远程windows主机.md)
+      - [Windows docker运行jenkins](/DevOps/Jenkins/Windows-docker运行jenkins.md)
+      - [pipeline使用](/DevOps/Jenkins/pipeline使用.md)
+    - [WSL2下安装jenkins](/DevOps/WSL2下安装jenkins.md)
+    - [WSL2通过frp进行端口转发](/DevOps/WSL2通过frp进行端口转发.md)
     - [WindowsServer安装OpenSSH服务](/DevOps/WindowsServer安装OpenSSH服务.md)
     - [Windows下安装openssh实现ssh连接](/DevOps/Windows下安装openssh实现ssh连接.md)
+    - [frp内网穿透](/DevOps/frp内网穿透.md)
     - [关于devops的思考与建议](/DevOps/关于devops的思考与建议.md)
   - Docker
     - [Dockerfile的操作](/Docker/Dockerfile的操作.md)
@@ -54,6 +60,7 @@
     - [docker镜像的操作](/Docker/docker镜像的操作.md)
   - GIS
     - [MacOS安装gdal](/GIS/MacOS安装gdal.md)
+    - [Ubuntu下编译安装java版gdal环境](/GIS/Ubuntu下编译安装java版gdal环境.md)
   - Java
     - JVM
       - [JVM常用命令](/Java/JVM/JVM常用命令.md)
@@ -194,6 +201,7 @@
       - [PMD代码质量审查](/Tools/PMD/PMD代码质量审查.md)
       - [使用maven插件进行pmd审查](/Tools/PMD/使用maven插件进行pmd审查.md)
     - [Windows操作指令](/Tools/Windows操作指令.md)
+    - [mac VirtualBox使用](/Tools/mac-VirtualBox使用.md)
     - [mac使用指南](/Tools/mac使用指南.md)
     - [mac操作指令](/Tools/mac操作指令.md)
     - [mac软件使用](/Tools/mac软件使用.md)

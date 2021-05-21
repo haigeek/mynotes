@@ -197,3 +197,9 @@ db.getCollection('dus_apply_cart').aggregate([
 ])
 ```
 
+数组查询
+
+```
+db.getCollection('dus_apply_from').find({"service":{"$elemMatch" :{"_id":"378b33ca-172f-41f5-9352-93acc1396f57"}}})
+```
+

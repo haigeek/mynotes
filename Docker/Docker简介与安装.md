@@ -48,4 +48,10 @@ docker镜像(Images)：软件打包好的镜像；放在docker仓库中；镜像
 systemctl stop docker
 
 ### 卸载步骤：
-1首先搜索已经安装的docker 安装包[root@localhost ~]# yum list installed|grep docker或者使用该命令[root@localhost ~]# rpm -qa|grep dockerdocker.x86_64 2:1.12.6-16.el7.centos @extrasdocker-client.x86_64 2:1.12.6-16.el7.centos @extrasdocker-common.x86_64 2:1.12.6-16.el7.centos @extra2 分别删除安装包[root@localhost ~]#yum –y remove docker.x86_64[root@localhost ~]#yum –y remove docker-client.x86_64[root@localhost ~]#yum –y remove docker-common.x86_643 删除docker 镜像[root@localhost ~]# rm -rf /var/lib/docker4 再次check docker是否已经卸载成功[root@localhost ~]# rm -rf /var/lib/docker[root@localhost ~]#如果没有搜索到，那么表示已经卸载成功。
+1首先搜索已经安装的docker 安装包[root@localhost ~]# yum list installed|grep docker或者使用该命令
+
+[root@localhost ~]# rpm -qa|grep dockerdocker.x86_64 2:1.12.6-16.el7.centos @extrasdocker-client.x86_64 2:1.12.6-16.el7.centos @extrasdocker-common.x86_64 2:1.12.6-16.el7.centos @extra
+
+2 分别删除安装包[root@localhost ~]#yum –y remove docker.x86_64[root@localhost ~]#yum –y remove docker-client.x86_64[root@localhost ~]#yum –y remove docker-common.x86_64
+
+3 删除docker 镜像[root@localhost ~]# rm -rf /var/lib/docker4 再次check docker是否已经卸载成功[root@localhost ~]# rm -rf /var/lib/docker[root@localhost ~]#如果没有搜索到，那么表示已经卸载成功。

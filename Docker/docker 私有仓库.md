@@ -1,5 +1,38 @@
 # docker 私有仓库
 
+docker配置私有仓库
+
+```
+vim  /etc/sysconfig/docker
+
+# OPTIONS='--insecure-registry 161.189.83.164'    #CentOS 7系统
+# other_args='--insecure-registry 10.20.26.52:5000' #CentOS 6系统
+```
+
+添加镜像源
+
+```
+ /etc/docker/daemon.json
+```
+
+添加
+
+```
+{
+		"registry-mirrors": ["https://registry.cn-hangzhou.aliyuncs.com"]
+}
+```
+
+重启
+
+```
+systemctl daemon-reload
+```
+
+
+
+## # 登录私服
+
 ## 创建私有仓库
 
 docker run -d -p 5000:5000 --restart=always -v /opt/data/registry:/var/lib/registry --name registry registry

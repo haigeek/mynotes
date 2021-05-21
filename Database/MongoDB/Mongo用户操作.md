@@ -39,3 +39,9 @@ db.system.users.find().pretty()
 
 
 
+给用户追加权限
+
+```
+db.grantRolesToUser("testRead",[{role:"dbOwner",db:"test"}])
+```
+

@@ -98,7 +98,7 @@ static变量在java中是属于类的，他在所有的实例中的值是一样�
 
 ## hashcode
 
-hashcode是由对象导出的一个整形值，假如x和y是两个不通的对象，他们的hashcode不会相同，每个对象都有一个默认的hashcode值，其值为对象的存储地址
+hashcode是由对象导出的一个整形值，假如x和y是两个不同的对象，他们的hashcode不会相同，每个对象都有一个默认的hashcode值，其值为对象的存储地址
 
 ### 什么时候需要重写hashcode
 
@@ -120,7 +120,7 @@ JAVA中所有的类都是继承与object这个超类，在Object类中定义了�
 
 ## 关联
 
-equals相等，hashcode必相等，hashcode相等，equals可能不相等
+equals()反应的是对象或者变量具体的值，即两个对象里面包含的的值，可能是对象的引用，也可能是值类型的值。而hashcode()是对象或者变量通过哈希算法计算出的哈希值 equals相等，hashcode必相等，hashcode相等，equals可能不相等
 
 
 
