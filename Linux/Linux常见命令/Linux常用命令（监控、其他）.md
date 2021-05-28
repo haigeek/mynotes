@@ -43,3 +43,14 @@ diff
 grep
 
 wc
+
+
+
+
+
+使用 ldd命令
+
+```
+ldd libWrapj.so |grep not
+```
+
