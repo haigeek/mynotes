@@ -49,7 +49,7 @@ wget http://nginx.org/download/nginx-1.8.1.tar.gz
 
 ```
 tar -zxvf nginx-1.8.1.tar.gz  
-cd nginx-1.8.1/   
+cd ngin
 ./configure  
 make   
 make install  
