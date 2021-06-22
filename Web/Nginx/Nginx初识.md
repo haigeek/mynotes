@@ -292,6 +292,9 @@ location /blog {
 prox_pass http://localhost:9000;
 ### 下面都是次要关注项
 proxy_set_header Host $host;
+proxy_set_header Host $host:$server_port;
+proxy_set_header  X-real-ip $remote_addr;
+
 proxy_method POST;
 # 指定不转发的头部字段
 proxy_hide_header Cache-Control;
